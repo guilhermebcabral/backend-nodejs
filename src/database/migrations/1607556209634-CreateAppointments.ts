@@ -2,7 +2,6 @@ import { query } from "express";
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export default class CreateAppointments1607556209634 implements MigrationInterface {
-  // O que será feito no banco de dados
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       // Criando tabelas
@@ -13,7 +12,8 @@ export default class CreateAppointments1607556209634 implements MigrationInterfa
             name: 'id',
             type: 'varchar',
             isPrimary: true,
-            generationStrategy: 'uuid'
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'provider',
