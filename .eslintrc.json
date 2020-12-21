@@ -1,11 +1,10 @@
 {
   "env": {
-    "es6": true,
+    "es2020": true,
     "node": true
   },
   "extends": [
     "airbnb-base",
-    "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
@@ -22,10 +21,11 @@
   "rules": {
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
+    "@typescript-eslint/camelcase": "off",
+    "camelcase": [0, {"properties": "never"}],
     "import/extensions": [
       "error",
       "ignorePackages",
-      "prettier",
       {
         "ts": "never"
       }
