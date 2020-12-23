@@ -1,7 +1,8 @@
-import { query } from "express";
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { query } from 'express';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateAppointments1607556209634 implements MigrationInterface {
+export default class CreateAppointments1607556209634
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       // Criando tabelas
@@ -33,12 +34,13 @@ export default class CreateAppointments1607556209634 implements MigrationInterfa
             type: 'timestamp',
             default: 'now()',
           },
-        ]
-      })
-    )
+        ],
+      }),
+    );
   }
+
   // fallback -> deletar/desfazer o que foi feito no método up
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('appointments')
+    await queryRunner.dropTable('appointments');
   }
 }
